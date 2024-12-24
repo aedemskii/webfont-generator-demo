@@ -16,8 +16,7 @@
     "gen-fontagon": "node src/build-fontagon.js",
     "optimize-n-svgtofont": "yarn optimize-webfont-icons && yarn gen-svgtofont",
     "optimize-n-fontagon": "yarn optimize-webfont-icons && yarn gen-fontagon",
-    "gulp-generate-font": "yarn gulp generate-webfont",
-    "minify-fonts": "node minify-fonts.js"
+    "gulp-generate-font": "yarn gulp generate-webfont"
   },
   "svgtofont": {
     "fontName": "webfont",
