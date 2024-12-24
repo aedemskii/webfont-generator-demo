@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+yarn-error.log
+yarn.lock
+src/webfont-icons-optimized/
+src/webfont-fontagon/
+src/webfont-svgtofont/

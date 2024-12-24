@@ -1,0 +1,44 @@
+{
+  "name": "try-webfont",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-svgo": "^2.2.1",
+    "svgo": "^3.3.2",
+    "svgtofont": "^6.2.0"
+  },
+  "scripts": {
+    "optimize-webfont-icons": "svgo -f ./src/webfont-icons-origin -o ./src/webfont-icons-optimized",
+    "gen-svgtofont": "svgtofont --sources ./src/webfont-icons-optimized --output ./src/webfont-svgtofont",
+    "gen-fontagon": "node src/build-fontagon.js",
+    "optimize-n-svgtofont": "yarn optimize-webfont-icons && yarn gen-svgtofont",
+    "optimize-n-fontagon": "yarn optimize-webfont-icons && yarn gen-fontagon",
+    "gulp-generate-font": "yarn gulp generate-webfont",
+    "minify-fonts": "node minify-fonts.js"
+  },
+  "svgtofont": {
+    "fontName": "webfont",
+    "website": {
+      "title": "Webfont Preview",
+      "logo": "",
+      "version": "1.0.0",
+      "template": null
+    },
+    "outSVGReact": false,
+    "css": {
+      "output": "./src/webfont-svgtofont",
+      "fileName": "webfont",
+      "include": "\\.(css)$",
+      "cssPath": ""
+    }
+  },
+  "type": "module",
+  "devDependencies": {
+    "@babel/register": "^7.25.9",
+    "del": "^8.0.0",
+    "fontagon": "^1.1.1"
+  }
+}
